@@ -1,1 +1,11 @@
-This repository contains various scripts, applications and sample code which links to the Amberdms Billing System via it's SOAP APIs.
+
+This repository contains various scripts, applications and sample code which operate seporately to
+the main billing system application but interact via the SOAP APIs.
+
+The software in this repository may be licensed under various different licenses, so please check the
+header of each program for licensing information.
+
+To make the best use of all the sample code included here, please refer to the Amberdms Billing System API
+developers manual.
+
+
