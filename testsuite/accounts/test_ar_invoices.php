@@ -116,7 +116,7 @@ $data["item"]["payment"]["description"]		= "SOAP test customer payment";
 
 
 /*
-	CONNECT TO ACCOUNTS_CHARTS_MANAGE SERVICE
+	CONNECT TO ACCOUNTS_INVOICES_MANAGE SERVICE
 
 */
 
