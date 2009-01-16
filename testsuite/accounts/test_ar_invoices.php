@@ -11,7 +11,14 @@
 	This script performs the following actions:
 	* Connects to the billing system
 	* Creates a new invoice and returns the ID
-	* Fetch the data for the invoice
+	* Adds the following items to the invoice
+		- standard item
+		- product item
+		- time group item
+		- tax item
+		- payment item
+	* Fetch all the data for the invoice and all items
+	* Deletes a single item
 	* Deletes the invoice
 */
 
@@ -57,7 +64,7 @@ unset($client);
 */
 
 // set the below ID to update an invoice, rather than create a new one
-//$data["id"]			= "57";
+//$data["id"]			= "";
 
 // invoice details
 $data["invoicetype"]		= "ar";
@@ -131,10 +138,6 @@ $client->__setLocation("$url/accounts/invoices_manage.php?$sessionid");
 */
 
 
-
-
-
-// create account
 try
 {
 	print "Creating new invoice...\n";

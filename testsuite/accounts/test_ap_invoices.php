@@ -11,7 +11,13 @@
 	This script performs the following actions:
 	* Connects to the billing system
 	* Creates a new invoice and returns the ID
-	* Fetch the data for the invoice
+	* Adds the following items to the invoice
+		- standard item
+		- product item
+		- tax item
+		- payment item
+	* Fetch all the data for the invoice and all items
+	* Deletes a single item
 	* Deletes the invoice
 */
 
