@@ -70,6 +70,11 @@ $data["code_product_vendor"]	= "vendor code 24125";
 $data["account_sales"]		= "1";
 
 
+$data_tax["itemid"]		= 0;
+$data_tax["taxid"]		= 1;
+$data_tax["manual_option"]	= 0;
+$data_tax["manual_amount"]	= 0;
+$data_tax["description"]	= "SOAP TEST";
 
 
 
@@ -109,6 +114,11 @@ try
 							$data["account_sales"]);
 
 	print "Created new product with ID of ". $data["id"] ."\n";
+
+
+	// adding new tax
+	$data_tax["id"] = $client->set_product_tax($data["id"], $data_tax["id"], $data_tax["taxid"], $data_tax["manual_option"], $data_tax["manual_amount"], $data_tax["description"]);
+
 }
 catch (SoapFault $exception)
 {
@@ -128,9 +138,13 @@ catch (SoapFault $exception)
 
 try
 {
-	$data_tmp = $client->get_product_details($data["id"]);
-
 	print "Executing get_product_details for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_product_details($data["id"]);
+	print_r($data_tmp);
+
+
+	print "Executing get_product_taxes for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_product_taxes($data["id"]);
 	print_r($data_tmp);
 
 }
@@ -151,6 +165,13 @@ catch (SoapFault $exception)
 
 try
 {
+	print "Delete tax item with ID of ". $data_tax["id"] ."\n";
+	$client->delete_product_tax($data["id"], $data_tax["id"]);
+
+	print "Listing remaining tax items:\n";
+	$data_tmp = $client->get_product_taxes($data["id"]);
+	print_r($data_tmp);
+
 	print "Deleting product with ID of ". $data["id"] ."\n";
 	$client->delete_product($data["id"]);
 
