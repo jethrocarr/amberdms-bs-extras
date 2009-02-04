@@ -61,10 +61,14 @@ $data["code_vendor"]		= "TEST_VENDOR";
 $data["date_start"]		= date("Y-m-d");
 $data["contact_email"]		= "test@example.com";
 
+$data_tax["taxid"]		= 1;
+$data_tax["status"]		= "on";
+
+
 
 
 /*
-	3. CONNECT TO CUSTOMERS_MANAGE SERVICE
+	3. CONNECT TO VENDORS_MANAGE SERVICE
 
 */
 
@@ -75,7 +79,7 @@ $client->__setLocation("$url/vendors/vendors_manage.php?$sessionid");
 
 
 /*
-	4. CREATE NEW CUSTOMER
+	4. CREATE NEW VENDOR
 */
 
 try
@@ -106,6 +110,15 @@ try
 							$data["address2_zipcode"]);
 
 	print "Created new vendor with ID of ". $data["id"] ."\n";
+
+
+	// enable a tax
+	print "Enabling tax...\n";
+	
+	$client->set_vendor_tax($data["id"], $data_tax["taxid"], $data_tax["status"]);
+
+
+
 }
 catch (SoapFault $exception)
 {
@@ -115,16 +128,20 @@ catch (SoapFault $exception)
 
 
 /*
-	5. SELECT CUSTOMER DETAILS
+	5. SELECT VENDOR DETAILS
 */
 
 
 try
 {
-	$data_tmp = $client->get_vendor_details($data["id"]);
-
 	print "Executing get_vendor_details for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_vendor_details($data["id"]);
 	print_r($data_tmp);
+
+	print "Executing get_vendor_tax for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_vendor_tax($data["id"]);
+	print_r($data_tmp);
+
 
 }
 catch (SoapFault $exception)
@@ -136,7 +153,7 @@ catch (SoapFault $exception)
 
 
 /*
-	6. DELETE CUSTOMER
+	6. DELETE VENDOR
 */
 
 
