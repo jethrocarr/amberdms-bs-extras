@@ -61,6 +61,8 @@ $data["code_customer"]		= "TEST_CUSTOMER";
 $data["date_start"]		= date("Y-m-d");
 $data["contact_email"]		= "test@example.com";
 
+$data_tax["taxid"]		= 1;
+$data_tax["status"]		= "on";
 
 
 /*
@@ -106,6 +108,13 @@ try
 							$data["address2_zipcode"]);
 
 	print "Created new customer with ID of ". $data["id"] ."\n";
+
+
+	// enable a tax
+	print "Enabling tax...\n";
+	
+	$client->set_customer_tax($data["id"], $data_tax["taxid"], $data_tax["status"]);
+
 }
 catch (SoapFault $exception)
 {
@@ -121,9 +130,13 @@ catch (SoapFault $exception)
 
 try
 {
-	$data_tmp = $client->get_customer_details($data["id"]);
 
 	print "Executing get_customer_details for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_customer_details($data["id"]);
+	print_r($data_tmp);
+
+	print "Executing get_customer_tax for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_customer_tax($data["id"]);
 	print_r($data_tmp);
 
 }
