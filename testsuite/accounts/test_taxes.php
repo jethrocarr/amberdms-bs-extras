@@ -56,11 +56,13 @@ unset($client);
 	This section is a good place to add your own code to fetch the data you need to post to the system.
 */
 
-$data["name_tax"]	= "test tax";
-$data["taxrate"]	= "15.6";
-$data["chartid"]	= "3";
-$data["taxnumber"]	= "111-222-333-444";
-$data["description"]	= "SOAP TEST TAX";
+$data["name_tax"]			= "test tax";
+$data["taxrate"]			= "15.6";
+$data["chartid"]			= "3";
+$data["taxnumber"]			= "111-222-333-444";
+$data["description"]			= "SOAP TEST TAX";
+$data["autoenable_tax_customer"]	= "on";
+$data["autoenable_tax_vendor"]		= "on";
 
 
 
@@ -92,7 +94,9 @@ try
 							$data["taxrate"],
 							$data["chartid"],
 							$data["taxnumber"],
-							$data["description"]);
+							$data["description"],
+							$data["autoenable_tax_customer"],
+							$data["autoenable_tax_vendor"]);
 
 	print "Created new tax with ID of ". $data["id"] ."\n";
 }
