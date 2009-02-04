@@ -78,6 +78,25 @@ $client->__setLocation("$url/accounts/taxes_manage.php?$sessionid");
 
 
 
+/*
+	FETCH LIST OF CURRENT TAXES
+*/
+
+try
+{
+	print "Fetching tax list...\n";
+
+	// fetch list
+	$data_tmp = $client->list_taxes();
+
+	print_r($data_tmp);
+}
+catch (SoapFault $exception)
+{
+	die( "Fatal Error: ". $exception->getMessage() ."\n");
+}
+
+
 
 /*
 	CREATE NEW TAX
