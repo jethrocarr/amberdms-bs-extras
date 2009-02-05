@@ -14,7 +14,6 @@
 	* Adds the following items to the invoice
 		- standard item
 		- product item
-		- tax item
 		- payment item
 	* Fetch all the data for the invoice and all items
 	* Deletes a single item
@@ -93,12 +92,6 @@ $data["item"]["product"]["quantity"]		= "5";
 $data["item"]["product"]["units"]		= "Items";
 $data["item"]["product"]["productid"]		= "1";
 $data["item"]["product"]["description"]		= "SOAP test product item";
-
-// define tax item
-$data["item"]["tax"]["id"]			= "";			// set to update existing items
-$data["item"]["tax"]["taxid"]			= "2";
-$data["item"]["tax"]["manual_option"]		= "";
-$data["item"]["tax"]["manual_amount"]		= "";
 
 // define payment item
 $data["item"]["payment"]["id"]			= "";			// set to update existing items
@@ -189,16 +182,6 @@ try
 							$data["item"]["product"]["units"],
 							$data["item"]["product"]["productid"],
 							$data["item"]["product"]["description"]);
-
-	print "Creating tax item...\n";
-
-	// upload data and get ID back
-	$result = $client->set_invoice_tax($data["id"],
-							$data["invoicetype"],
-							$data["item"]["tax"]["id"],
-							$data["item"]["tax"]["taxid"],
-							$data["item"]["tax"]["manual_option"],
-							$data["item"]["tax"]["manual_amount"]);
 
 	print "Creating payment item...\n";
 
