@@ -104,12 +104,6 @@ $data["item"]["time"]["productid"]		= "1";
 $data["item"]["time"]["timegroupid"]		= "1";
 $data["item"]["time"]["description"]		= "SOAP test time item";
 
-// define tax item
-$data["item"]["tax"]["id"]			= "";			// set to update existing items
-$data["item"]["tax"]["taxid"]			= "2";
-$data["item"]["tax"]["manual_option"]		= "";
-$data["item"]["tax"]["manual_amount"]		= "";
-
 // define payment item
 $data["item"]["payment"]["id"]			= "";			// set to update existing items
 $data["item"]["payment"]["date_trans"]		= date("Y-m-d");
@@ -183,6 +177,16 @@ try
 										$data["item"]["standard"]["amount"],
 										$data["item"]["standard"]["description"]);
 
+	// enable tax ID 1
+	
+	print "Setting tax 1 to on for standard item\n";
+	$client->set_invoice_item_standard_tax($data["id"],
+						$data["invoicetype"],
+						$data["item"]["standard"]["id"],
+						"1",
+						"on");
+	
+
 
 	print "Creating product item...\n";
 
@@ -196,7 +200,7 @@ try
 							$data["item"]["product"]["productid"],
 							$data["item"]["product"]["description"]);
 
-	print "Creating time item...\n";
+/*	print "Creating time item...\n";
 
 	// upload data and get ID back
 	$result = $client->set_invoice_item_time($data["id"],
@@ -207,16 +211,7 @@ try
 							$data["item"]["time"]["timegroupid"],
 							$data["item"]["time"]["description"]);
 
-	print "Creating tax item...\n";
-
-	// upload data and get ID back
-	$result = $client->set_invoice_tax($data["id"],
-							$data["invoicetype"],
-							$data["item"]["tax"]["id"],
-							$data["item"]["tax"]["taxid"],
-							$data["item"]["tax"]["manual_option"],
-							$data["item"]["tax"]["manual_amount"]);
-
+*/
 	print "Creating payment item...\n";
 
 	// upload data and get ID back
@@ -294,7 +289,6 @@ catch (SoapFault $exception)
 {
 	die( "Fatal Error: ". $exception->getMessage() ."\n");
 }
-
 
 
 
