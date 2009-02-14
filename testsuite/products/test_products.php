@@ -22,7 +22,7 @@
 
 $url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
 
-$auth_account	= 0;		// only used by Amberdms Billing System - Hosted Version
+$auth_account	= "amberdms";		// only used by Amberdms Billing System - Hosted Version
 $auth_username	= "soap";
 $auth_password	= "setup123";
 
@@ -60,14 +60,18 @@ unset($client);
 $data["code_product"]		= "soap_test";
 $data["name_product"]		= "soap test items";
 $data["details"]		= "This item is created by the SOAP API testsuite";
+$data["units"]			= "items";
 $data["price_cost"]		= "15.00";
 $data["price_sale"]		= "30.00";
+$data["date_start"]		= date("Y-m-d");
+$data["date_end"]		= "";
 $data["date_current"]		= date("Y-m-d");
 $data["quantity_instock"]	= "10";
 $data["quantity_vendor"]	= "2153";
 $data["vendorid"]		= "5";
 $data["code_product_vendor"]	= "vendor code 24125";
-$data["account_sales"]		= "1";
+$data["account_sales"]		= "9";
+$data["account_purchase"]	= "10";
 
 
 $data_tax["itemid"]		= 0;
@@ -103,15 +107,19 @@ try
 	$data["id"] = $client->set_product_details($data["id"],
 							$data["code_product"],
 							$data["name_product"],
+							$data["units"],
 							$data["details"],
 							$data["price_cost"],
 							$data["price_sale"],
+							$data["date_start"],
+							$data["date_end"],
 							$data["date_current"],
 							$data["quantity_instock"],
 							$data["quantity_vendor"],
 							$data["vendorid"],
 							$data["code_product_vendor"],
-							$data["account_sales"]);
+							$data["account_sales"],
+							$data["account_purchase"]);
 
 	print "Created new product with ID of ". $data["id"] ."\n";
 
