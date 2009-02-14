@@ -1,0 +1,17 @@
+AMBERDMS BILLING SYSTEM - SQL-LEDGER MIGRATION UTILITY
+
+Amberdms has been developing a migration utility to allow users of the open
+source SQL-Ledger application to migrate all their financial information
+to the Amberdms Billing System.
+
+WARNING: THIS CODE IS CURRENT ALPHA AND MAY NOT WORK CORRECTLY. THIS WARNING
+	 WILL BE REMOVED WHEN THE CODE IS OFFICAL RELEASED.
+
+For full details about this migration utility, please read the included
+documentation files.
+
+
+SQL-Ledger versions supported:
+* 2.6.x
+
+

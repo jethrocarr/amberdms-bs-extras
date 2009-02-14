@@ -1,0 +1,59 @@
+CONTRIBTION INFORMATION
+=======================
+
+Unlike the main Amberdms Billing System codebase, the contents of the external
+programs package are licensed under various different software licenses.
+
+
+If you would like to contribute changes to this program - whether it is code,
+documentation or alternate language support, please send it to either the project
+development mailing list or directly to developers@amberdms.com.
+
+Security issues should always be reported to security@amberdms.com so that
+we can issue updates promptly to all users.
+
+Amberdms will always public credit anyone who finds a security flaw or contributes
+any other content.
+
+
+The following are the requirements for getting your code included in this package.
+
+1. All submissions must include either of the following:
+
+	a) A copyright notice along with the license terms of your submission. If you
+	   are modifying an existing program, Amberdms will only accept code under
+	   the same license as the original program.
+
+	b) If you don't care about the licensing, you can submit your code with the
+	   following notice attached:
+
+	  "I assign copyright ownership of this source code to Amberdms Ltd (New Zealand) to
+	   use in anyway they see fit."
+
+	   Amberdms will include the code and still give you credit for the change, but are
+	   able to release your code in any way in future.
+
+
+2. Amberdms can not accept any code which is covered by software patents - if you wish to
+   submit patented technologies, Amberdms will only accept if all of the following are true:
+   	
+	a) You/your organisation owns the patent(s) in question.
+
+	b) You issue a world-wide, irrevokable, royalty-free license for anyone using Amberdms
+	   source code under an open source license (as defined by the OSI or FSF).
+
+	c) The patented code must be clearly marked.
+
+
+
+Please send all submissions to any of the following locations:
+
+a) The development mailing list for the project - please see www.amberdms.com/billing for details.
+
+b) security@amberdms.com (security issues only)
+
+c) developers@amberdms.com (all other submissions)
+
+
+
+<end>

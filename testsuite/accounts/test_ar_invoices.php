@@ -2,6 +2,9 @@
 /*
 	test_ar_invoices.php
 
+	Copyright (c) 2009 Amberdms Ltd
+
+
 	TESTSUITE SCRIPT
 
 	Tests following SOAP APIs:
@@ -20,6 +23,30 @@
 	* Fetch all the data for the invoice and all items
 	* Deletes a single item
 	* Deletes the invoice
+
+
+	----
+	Permission is hereby granted, free of charge, to any person
+	obtaining a copy of this software and associated documentation
+	files (the "Software"), to deal in the Software without
+	restriction, including without limitation the rights to use,
+	copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the
+	Software is furnished to do so, subject to the following
+	conditions:
+
+	The above copyright notice and this permission notice shall be
+	included in all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+	OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+	OTHER DEALINGS IN THE SOFTWARE.
+	----
 */
 
 
@@ -29,7 +56,7 @@
 
 $url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
 
-$auth_account	= 0;		// only used by Amberdms Billing System - Hosted Version
+$auth_account	= "";		// only used by Amberdms Billing System - Hosted Version
 $auth_username	= "soap";
 $auth_password	= "setup123";
 

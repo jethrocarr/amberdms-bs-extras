@@ -1,5 +1,10 @@
 
-This repository contains various scripts, applications and sample code which operate seporately to
+Amberdms Billing System :: External Programs
+
+www.amberdms.com/billing
+
+
+This package contains various scripts, applications and sample code which operate independantly to
 the main billing system application but interact via the SOAP APIs.
 
 The software in this repository may be licensed under various different licenses, so please check the
@@ -7,5 +12,11 @@ header of each program for licensing information.
 
 To make the best use of all the sample code included here, please refer to the Amberdms Billing System API
 developers manual.
+
+
+For information on contributing your changes, please read the CONTRIBUTORS file.
+
+If you require commercial support or customisation work, please visit
+www.amberdms.com/billing or contact sales@amberdms.com
 
 
