@@ -80,7 +80,6 @@ $data["date_trans"]		= date("Y-m-d");
 $data["date_sent"]		= date("Y-m-d");
 $data["sentmethod"]		= "";
 $data["notes"]			= "SOAP API TEST INVOICE";
-$data["autotaxes"]		= "off";
 
 
 // define standard item
@@ -150,8 +149,7 @@ try
 							$data["date_trans"],
 							$data["date_sent"],
 							$data["sentmethod"],
-							$data["notes"],
-							$data["autotaxes"]);
+							$data["notes"]);
 
 	print "Created new invoice with ID of ". $data["id"] ."\n";
 }
