@@ -46,9 +46,9 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
+$url		= "https://devel-centos5-32.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
 
-$auth_account	= 0;		// only used by Amberdms Billing System - Hosted Version
+$auth_account	= "demo";		// only used by Amberdms Billing System - Hosted Version
 $auth_username	= "soap";
 $auth_password	= "setup123";
 
@@ -156,6 +156,10 @@ catch (SoapFault $exception)
 
 try
 {
+	print "Executing get_customer_id_from_code\n";
+	$data_tmp = $client->get_customer_id_from_code($data["code_customer"]);
+	print "code_customer ". $data["code_customer"] . " translates to ID ". $data_tmp ."\n";
+
 
 	print "Executing get_customer_details for ID ". $data["id"] ."\n";
 	$data_tmp = $client->get_customer_details($data["id"]);

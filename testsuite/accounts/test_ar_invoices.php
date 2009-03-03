@@ -54,9 +54,9 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
+$url		= "https://devel-centos5-32.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
 
-$auth_account	= "";		// only used by Amberdms Billing System - Hosted Version
+$auth_account	= "demo";		// only used by Amberdms Billing System - Hosted Version
 $auth_username	= "soap";
 $auth_password	= "setup123";
 
@@ -99,7 +99,7 @@ $data["locked"]			= 0;
 $data["orgid"]			= "2";
 $data["employeeid"]		= "4";
 $data["dest_account"]		= "2";
-$data["code_invoice"]		= "";
+$data["code_invoice"]		= "SOAP_TEST";
 $data["code_ordernumber"]	= "";
 $data["code_ponumber"]		= "";
 $data["date_due"]		= date("Y-m-d");
@@ -267,10 +267,16 @@ catch (SoapFault $exception)
 
 try
 {
-	$data_tmp = $client->get_invoice_details($data["id"], $data["invoicetype"]);
+	print "Executing get_invoice_id_from_code\n";
+	$data_tmp = $client->get_invoice_id_from_code($data["code_invoice"], $data["invoicetype"]);
+	print "code_invoice ". $data["code_invoice"] . " translates to ID ". $data_tmp ."\n";
+
 
 	print "Executing get_invoice_details for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_invoice_details($data["id"], $data["invoicetype"]);
 	print_r($data_tmp);
+
+
 
 }
 catch (SoapFault $exception)
