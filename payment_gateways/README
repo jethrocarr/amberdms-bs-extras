@@ -1,0 +1,14 @@
+AMBERDMS BILLING SYSTEM PAYMENT GATEWAYS
+========================================
+
+This directory contains open sources code for setting up payment gateways to allow
+customers to pay invoices via credit card, paypal, etc.
+
+In the future, it is planned to incorporate these features inside the Amberdms Billing
+System itself, but the code here allows you to write more complex systems of your own.
+
+
+All these payment gateways communicate with the Amberdms Billing System via it's SOAP
+API, so you can integrate the payment code with your company website, whilst running the
+Amberdms Billing System itself on a different server or private-only network.
+

@@ -1,0 +1,49 @@
+body
+{
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: black;
+	background-color: #d9d9d9;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+table, p
+{
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+h1,h2,h3,h4
+{
+	display: inline;	/* stop the headers from enforcing annoying spacing */
+}
+
+a:link, a:visited
+{
+	color:			#5e5e5e;
+	background-color:	transparent;
+	text-decoration:	none;
+	border:			none;
+	padding:		2px;
+}
+
+a:hover
+{
+	color:			#5e5e5e;
+	text-decoration:	underline;
+	border:			none;
+	background-color:	transparent;
+	padding:		2px;
+}
+
+pre
+{
+	background-color: #e3e3e3;
+}
+

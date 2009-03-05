@@ -1,0 +1,29 @@
+PAYPAL PAYMENT GATEWAYS
+=======================
+
+WARNING: THE PAYPAL PAYMENT GATEWAYS ARE CURRENTLY ALPHA CODE. THERE MAY STILL BE
+	 UNDIAGNOSED BUGS OR OTHER ISSUES. DOCUMENTATION MAY BE INCOMPLETE.
+
+	 Any feedback regarding whether the payment gateways work for you or not
+	 would be apperciated at support@amberdms.com.
+
+	 
+
+website_payments_standard
+=========================
+
+The Website Payments Standard PayPal service is the lowest-cost, simpliest solution
+offered by PayPal.
+
+Amberdms's sample code currently supports:
+* Allowing customers to lookup and pay invoices
+* IPN payment notification
+* Support for paypal fees.
+
+When a customer pays for an invoice using paypal, an IPN is sent from PayPal back to
+your server.
+
+This IPN is then processed and two things are changed in the billing system:
+1. The payment is filed against the invoice.
+2. A GL transaction is created for the paypal fees.
+
