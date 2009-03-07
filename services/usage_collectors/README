@@ -1,0 +1,23 @@
+SERVICE USAGE COLLECTORS
+========================
+
+Service usage collectors are programs for uploading usage records into the
+Amberdms Billing System, where the records are then used when generating service
+invoices.
+
+Note that the Amberdms Billing System will only bill on a daily basis, so there
+is no use supplying hourly records, since they will just slow down database
+queries.
+
+A number of sample collectors have been supplied which you may use to collect
+data:
+
+* send_usage_records		General sample code collector template
+
+* sent_netacct_records		Reads usage records from netacct and sends a
+				daily summary.
+
+
+Please refer to the Amberdms SOAP API and the Amberdms Service Usage Guide for
+further information.
+
