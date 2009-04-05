@@ -47,9 +47,9 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
+$url		= "https://devel-centos5-32.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
 
-$auth_account	= 0;		// only used by Amberdms Billing System - Hosted Version
+$auth_account	= "demo";		// only used by Amberdms Billing System - Hosted Version
 $auth_username	= "soap";
 $auth_password	= "setup123";
 
@@ -87,6 +87,7 @@ $data["name_vendor"]		= "SOAP API Testscript";
 $data["code_vendor"]		= "TEST_VENDOR";
 $data["date_start"]		= date("Y-m-d");
 $data["contact_email"]		= "test@example.com";
+$data["discount"]		= "15";
 
 $data_tax["taxid"]		= 1;
 $data_tax["status"]		= "on";
@@ -134,7 +135,8 @@ try
 							$data["address2_city"],
 							$data["address2_state"],
 							$data["address2_country"],
-							$data["address2_zipcode"]);
+							$data["address2_zipcode"],
+							$data["discount"]);
 
 	print "Created new vendor with ID of ". $data["id"] ."\n";
 

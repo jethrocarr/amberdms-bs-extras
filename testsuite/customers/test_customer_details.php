@@ -86,6 +86,7 @@ $data["name_customer"]		= "SOAP API Testscript";
 $data["code_customer"]		= "TEST_CUSTOMER";
 $data["date_start"]		= date("Y-m-d");
 $data["contact_email"]		= "test@example.com";
+$data["discount"]		= "10";
 
 $data_tax["taxid"]		= 1;
 $data_tax["status"]		= "on";
@@ -131,7 +132,8 @@ try
 							$data["address2_city"],
 							$data["address2_state"],
 							$data["address2_country"],
-							$data["address2_zipcode"]);
+							$data["address2_zipcode"],
+							$data["discount"]);
 
 	print "Created new customer with ID of ". $data["id"] ."\n";
 

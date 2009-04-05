@@ -47,9 +47,9 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
+$url		= "https://devel-centos5-32.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
 
-$auth_account	= "amberdms";		// only used by Amberdms Billing System - Hosted Version
+$auth_account	= "demo";		// only used by Amberdms Billing System - Hosted Version
 $auth_username	= "soap";
 $auth_password	= "setup123";
 
@@ -99,6 +99,7 @@ $data["vendorid"]		= "5";
 $data["code_product_vendor"]	= "vendor code 24125";
 $data["account_sales"]		= "9";
 $data["account_purchase"]	= "10";
+$data["discount"]		= "15";
 
 
 $data_tax["itemid"]		= 0;
@@ -146,7 +147,8 @@ try
 							$data["vendorid"],
 							$data["code_product_vendor"],
 							$data["account_sales"],
-							$data["account_purchase"]);
+							$data["account_purchase"],
+							$data["discount"]);
 
 	print "Created new product with ID of ". $data["id"] ."\n";
 

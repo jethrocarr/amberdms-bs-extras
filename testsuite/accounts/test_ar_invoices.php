@@ -123,6 +123,16 @@ $data["item"]["product"]["units"]		= "Items";
 $data["item"]["product"]["productid"]		= "1";
 $data["item"]["product"]["description"]		= "SOAP test product item";
 
+// define product with discount
+$data["item"]["discount"]["id"]			= "";		// set to update existing items
+$data["item"]["discount"]["price"]		= "100.00";
+$data["item"]["discount"]["quantity"]		= "5";
+$data["item"]["discount"]["units"]		= "Items";
+$data["item"]["discount"]["productid"]		= "1";
+$data["item"]["discount"]["description"]	= "SOAP test product item";
+$data["item"]["discount"]["discount"]		= "20";
+
+
 // define time item
 $data["item"]["time"]["id"]			= "";			// set to update existing items
 $data["item"]["time"]["price"]			= "10.00";
@@ -211,6 +221,20 @@ try
 						"1",
 						"on");
 	
+
+
+	print "Creating discounted product item...\n";
+
+	// upload data and get ID back
+	$result = $client->set_invoice_item_product($data["id"],
+							$data["invoicetype"],
+							$data["item"]["discount"]["id"],
+							$data["item"]["discount"]["price"],
+							$data["item"]["discount"]["quantity"],
+							$data["item"]["discount"]["units"],
+							$data["item"]["discount"]["productid"],
+							$data["item"]["discount"]["description"],
+							$data["item"]["discount"]["discount"]);
 
 
 	print "Creating product item...\n";
