@@ -52,11 +52,13 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-centos5-32.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
+$url		= "https://devel-webapps.local.amberdms.com/development/amberdms/billing_system/htdocs/api/";
+//$url		= "https://www.amberdms.com/products/billing_system/online/api/";
 
 $auth_account	= "devel";		// only used by Amberdms Billing System - Hosted Version
-$auth_username	= "soap";
+$auth_username	= "setup";
 $auth_password	= "setup123";
+
 
 
 
