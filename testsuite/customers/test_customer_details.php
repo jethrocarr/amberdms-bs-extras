@@ -9,7 +9,7 @@
 
 	Tests following SOAP APIs:
 	* authenticate (login function)
-	* customers_manage (all functions)
+	* customers_manage (all functions excluding portal)
 
 	This script performs the following actions:
 	1. Connects to the billing system
@@ -97,6 +97,8 @@ $data_tax["status"]		= "on";
 	3. CONNECT TO CUSTOMERS_MANAGE SERVICE
 
 */
+
+print "Session ID is: ". $sessionid ."\n";
 
 $client = new SoapClient("$url/customers/customers_manage.wsdl");
 $client->__setLocation("$url/customers/customers_manage.php?$sessionid");
