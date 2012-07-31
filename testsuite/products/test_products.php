@@ -47,7 +47,7 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-webapps.local.amberdms.com/development/amberdms/billing_system/htdocs/api/";
+$url            = "https://devel-webapps.local.amberdms.com/development/amberdms_opensource/oss-amberdms-bs/trunk/api/";
 //$url		= "https://www.amberdms.com/products/billing_system/online/api/";
 
 $auth_account	= "devel";		// only used by Amberdms Billing System - Hosted Version
@@ -74,10 +74,12 @@ try
 }
 catch (SoapFault $exception)
 {
-	die( "Fatal Error: ". $exception->getMessage() ."\n");
+	die( "Fatal Authentication Error: ". $exception->getMessage() ."\n");
 }
 
 unset($client);
+
+
 
 
 /*
@@ -104,12 +106,8 @@ $data["account_sales"]		= "9";
 $data["account_purchase"]	= "10";
 $data["discount"]		= "15";
 
-
-$data_tax["itemid"]		= 0;
 $data_tax["taxid"]		= 1;
-$data_tax["manual_option"]	= 0;
-$data_tax["manual_amount"]	= 0;
-$data_tax["description"]	= "SOAP TEST";
+$data_tax["status"]		= "on";
 
 
 
@@ -156,8 +154,10 @@ try
 	print "Created new product with ID of ". $data["id"] ."\n";
 
 
-	// adding new tax
-	$data_tax["id"] = $client->set_product_tax($data["id"], $data_tax["id"], $data_tax["taxid"], $data_tax["manual_option"], $data_tax["manual_amount"], $data_tax["description"]);
+	// enable a tax
+	print "Enabling tax...\n";
+	
+	$client->set_product_tax($data["id"], $data_tax["taxid"], $data_tax["status"]);
 
 }
 catch (SoapFault $exception)
@@ -165,7 +165,6 @@ catch (SoapFault $exception)
 	die( "Fatal Error: ". $exception->getMessage() ."\n");
 
 }
-
 
 
 
@@ -182,9 +181,8 @@ try
 	$data_tmp = $client->get_product_details($data["id"]);
 	print_r($data_tmp);
 
-
-	print "Executing get_product_taxes for ID ". $data["id"] ."\n";
-	$data_tmp = $client->get_product_taxes($data["id"]);
+	print "Executing get_product_tax for ID ". $data["id"] ."\n";
+	$data_tmp = $client->get_product_tax($data["id"]);
 	print_r($data_tmp);
 
 }
@@ -202,16 +200,8 @@ catch (SoapFault $exception)
 */
 
 
-
 try
 {
-	print "Delete tax item with ID of ". $data_tax["id"] ."\n";
-	$client->delete_product_tax($data["id"], $data_tax["id"]);
-
-	print "Listing remaining tax items:\n";
-	$data_tmp = $client->get_product_taxes($data["id"]);
-	print_r($data_tmp);
-
 	print "Deleting product with ID of ". $data["id"] ."\n";
 	$client->delete_product($data["id"]);
 

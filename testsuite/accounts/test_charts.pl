@@ -11,7 +11,7 @@ use Data::Dumper qw(Dumper);
 #
 
 
-my $url		= "https://devel-centos5-64.jethrocarr.local/development/amberdms/billing_system/htdocs/api";
+my $url            = "https://devel-webapps.local.amberdms.com/development/amberdms_opensource/oss-amberdms-bs/trunk/api/";
 
 my $auth_account	= 0;		# only used by Amberdms Billing System - Hosted Version
 my $auth_username	= "soap";

@@ -47,7 +47,7 @@
 	CONFIGURATION
 */
 
-$url		= "https://devel-webapps.local.amberdms.com/development/amberdms/billing_system/htdocs/api/";
+$url            = "https://devel-webapps.local.amberdms.com/development/amberdms_opensource/oss-amberdms-bs/trunk/api/";
 //$url		= "https://www.amberdms.com/products/billing_system/online/api/";
 
 $auth_account	= "devel";		// only used by Amberdms Billing System - Hosted Version
@@ -87,7 +87,9 @@ unset($client);
 $data["name_vendor"]		= "SOAP API Testscript";
 $data["code_vendor"]		= "TEST_VENDOR";
 $data["date_start"]		= date("Y-m-d");
+$data["name_contact"]		= "Accounts Manager";
 $data["contact_email"]		= "test@example.com";
+$data["contact_phone"]		= "12 123 1234";
 $data["discount"]		= "15";
 
 $data_tax["taxid"]		= 1;

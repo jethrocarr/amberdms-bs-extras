@@ -46,7 +46,7 @@
 
 
 // API credentials
-$url			= "https://devel-webapps.local.amberdms.com/development/amberdms/billing_system/htdocs/api/";
+$url			= "https://devel-webapps.local.amberdms.com/development/amberdms_opensource/oss-amberdms-bs/trunk/api/";
 //$url			= "https://www.amberdms.com/products/billing_system/online/api/";
 
 $auth_account		= "devel";		// only used by Amberdms Billing System - Hosted Version
