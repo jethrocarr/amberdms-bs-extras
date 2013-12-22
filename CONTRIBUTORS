@@ -1,59 +1,44 @@
-CONTRIBTION INFORMATION
-=======================
+CONTRIBUTIONS
+=============
 
-Unlike the main Amberdms Billing System codebase, the contents of the external
-programs package are licensed under various different software licenses.
+Amberdms Billing System is an open source project and we are always keen for
+contributions, in numerous areas such as:
 
+* Feature enhancements.
+* Bug reports (and fixes if you can).
+* Improving documentation.
+* Translation into non-English languages.
 
-If you would like to contribute changes to this program - whether it is code,
-documentation or alternate language support, please send it to either the project
-development mailing list or directly to developers@amberdms.com.
-
-Security issues should always be reported to security@amberdms.com so that
-we can issue updates promptly to all users.
-
-Amberdms will always public credit anyone who finds a security flaw or contributes
-any other content.
+Contributions in the form of plugins and integration with other applications
+and systems are always welcome too.
 
 
-The following are the requirements for getting your code included in this package.
+SUBMITTING CONTRIBUTIONS
 
-1. All submissions must include either of the following:
+If you're contributing bugs reports/fixes, code patches and other contributions
+to the application, please open an issue in the tracking system and attach your
+patch - alternatively, you can submit a pull request via Github.
 
-	a) A copyright notice along with the license terms of your submission. If you
-	   are modifying an existing program, Amberdms will only accept code under
-	   the same license as the original program.
+You may also wish to email the community mailing list to discuss your changes and
+plans with other developers.
 
-	b) If you don't care about the licensing, you can submit your code with the
-	   following notice attached:
-
-	  "I assign copyright ownership of this source code to Amberdms Ltd (New Zealand) to
-	   use in anyway they see fit."
-
-	   Amberdms will include the code and still give you credit for the change, but are
-	   able to release your code in any way in future.
+If you have found a security issue, please contact jethro.carr@jethrocarr.com
+directly to bring it to attention as a high-priority issue and to have it fixed
+in a responsible way.
 
 
-2. Amberdms can not accept any code which is covered by software patents - if you wish to
-   submit patented technologies, Amberdms will only accept if all of the following are true:
-   	
-	a) You/your organisation owns the patent(s) in question.
+LEGAL STUFF
 
-	b) You issue a world-wide, irrevokable, royalty-free license for anyone using Amberdms
-	   source code under an open source license (as defined by the OSI or FSF).
-
-	c) The patented code must be clearly marked.
+Amberdms Billing System Extras are licensed under various different licenses.
+Make sure you check and ensure that you have the legal rights to contribute
+your code/content under said licenses.
 
 
+LINKS
 
-Please send all submissions to any of the following locations:
-
-a) The development mailing list for the project - please see www.amberdms.com/billing for details.
-
-b) security@amberdms.com (security issues only)
-
-c) developers@amberdms.com (all other submissions)
-
+* Project Homepage: https://projects.jethrocarr.com/p/oss-amberdms-bs-extras/
+* Mailing List:     http://lists.amberdms.com/mailman/listinfo/amberdms-bs
+* Github:           https://github.com/jethrocarr/amberdms-bs-extras
 
 
 <end>
